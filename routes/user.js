@@ -9,14 +9,14 @@ app.post('/signup', (req, res) => {
 })
 
 
-app.post('/user/signup', (req, res) => {
+userRouter.post('/user/signup', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     
     
 })
 
-app.get('/user/purchases', (req, res) => {
+userRouter.get('/user/purchases', (req, res) => {
 
 })
 
