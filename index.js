@@ -2,14 +2,16 @@ const express = require('express');
 const app = express();
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
+const { userRouter } = require('./routes/user');
+const { courseRouter } = require('./routes/course');
 
 
-app.post('/signup', (req, res) => {
-    const email = req.body.email;
-    const password = req.body.password;
 
 
-})
+app.use('/api/v1/user', userRouter);
+app.use('/api/v1/course', courseRouter);
+
+
 
 
 app.listen(3000);
