@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -19,7 +20,7 @@ app.use('/api/v1/admin', adminRouter);
 
 
 async function main() {
-    await mongoose.connect(MONGO_URI='mongodb+srv://arjun_db_user:UcYLbNPEddGxaSRm@cluster0.ml3fhhi.mongodb.net/CourseUP');
+    await mongoose.connect(process.env.MONGO_URI);
     app.listen(3000);
     console.log('listening on PORT=3000');
 }
